@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- My Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- Style Css -->
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+    <title>SPK Laptop</title>
+</head>
+<body>
+   
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#"> Sat <span> Laptop</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pemilihan Laptop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tentang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="bantuan.html">Bantuan</a>
+              </li>
+             
+            </ul>
+        </div>
+          </div>
+          <script>
+            // Add active class to the current button (highlight it)
+            var header = document.getElementById("navbarNavAltMarkup");
+            var btns = header.getElementsByClassName("nav-link");
+            for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function() {
+              var current = document.getElementsByClassName("active");
+              current[0].className = current[0].className.replace(" active", "");
+              this.className += " active";
+              });
+            }
+            </script>
+      </nav>
+    <!-- akhir navbar -->
+     
+
+    <!-- Bantuan -->
+    <section id="bantuan">
+        <h3 class="text-center">Bantuan Kami</h3>
+        <div class="container">
+            <div class="penggunaan">
+                <h4>Cara</h4>
+            </div>
+        </div>
+    </section>
+   
+<!-- Awal Footer -->
+<section id="footer">
+    <footer class="footer_main">
+      <div class="footer-left">
+        <img src="bootstrap/img/vieri.png" alt="Vieri Satria Ardiansyah" width="120px" height="120px" class="rounded-circle" />
+        <p class="author">Vieri Satria Ardiansyah</p>
+        <p class="jurusan">Sistem Informasi</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Talaga Bestari</span> Kabupaten Tangerang, Indonesia</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p>vierisatriaa08@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <img src="bootstrap/img/" alt=""><span>Universitas Gunadarma</span>
+          Fakultas Ilmu Komputer dan Teknologi Informasi
+        </p>
+
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/muhammad.sobirin.79274089"><i class="fa fa-facebook"></i></a>
+          
+          <a href="https://www.instagram.com/muh.obi_/"><i class="fa fa-instagram"></i></a>
+          
+        </div>
+      </div>
+      <hr />
+      <div class="copy-right">
+        <p>&copy; 2021. All rights reserved.</p>
+      </div>
+    </footer>
+  </section>    <!-- akhir Footer -->       
+
+<!-- Bootstrap JS -->
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>

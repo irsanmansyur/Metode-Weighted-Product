@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- My Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <!-- Style Css -->
+    <link rel="stylesheet" href="bootstrap/css/style.css">
+    <title>SPK Laptop</title>
+</head>
+<body>
+   
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#"> Sat <span>Laptop</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pemilihan Laptop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Tentang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="bantuan.html">Bantuan</a>
+              </li>
+             
+            </ul>
+        </div>
+          </div>
+          <script>
+            // Add active class to the current button (highlight it)
+            var header = document.getElementById("navbarNavAltMarkup");
+            var btns = header.getElementsByClassName("nav-link");
+            for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function() {
+              var current = document.getElementsByClassName("active");
+              current[0].className = current[0].className.replace(" active", "");
+              this.className += " active";
+              });
+            }
+            </script>
+      </nav>
+    <!-- akhir navbar -->
+     
+    <!-- Home -->
+      <section id="home">
+        <h3 class="text-center">Cari Laptop Sesuai Kebutuhan Anda</h3>
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="bootstrap/img/laptop-1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h4>ASUS Notebook A409FJ-EK752T</h5>
+                  <a href="" class="btn_cek">Pilih Laptop</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="bootstrap/img/ASUS Notebook A413EP-VIPS753.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h4>HP Notebook 14s-cf2076TU</h4><br>
+                  <a href="" class="btn_cek">Pilih Laptop</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="bootstrap/img/HP Notebook 14s-cf2076TU 36F70PA - Gold.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h4>Third slide label</h4>
+                  <a href="" class="btn_cek">Pilih Laptop</a>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+      </section><hr>
+    <!-- akhir home -->
+
+    <!-- card-modal -->
+    <section id="pilihan">
+        <h3 class="text-center">Data Laptop</h3>
+        <div class="container mt-3">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                  <div class="card">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      Launch demo modal
+                    </button>
+                    <img src="bootstrap/img/laptop-1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="bootstrap/img/ASUS Notebook A413EP-VIPS753.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="bootstrap/img/HP Notebook 14s-cf2076TU 36F70PA - Gold.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+   
+<!-- Awal Footer -->
+<section id="footer">
+    <footer class="footer_main">
+      <div class="footer-left">
+        <img src="bootstrap/img/vieri.png" alt="Vieri Satria Ardiansyah" width="120px" height="120px" class="rounded-circle" />
+        <p class="author">Vieri Satria Ardiansyah</p>
+        <p class="jurusan">Sistem Informasi</p>
+      </div>
+
+      <div class="footer-center">
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Talaga Bestari</span> Kabupaten Tangerang, Indonesia</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p>vierisatriaa08@gmail.com</p>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-company-about">
+          <span>Universitas Gunadarma</span>
+          Fakultas Ilmu Komputer dan Teknologi Informasi
+        </p>
+
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/muhammad.sobirin.79274089"><i class="fa fa-facebook"></i></a>
+          
+          <a href="https://www.instagram.com/muh.obi_/"><i class="fa fa-instagram"></i></a>
+          
+        </div>
+      </div>
+      <hr />
+      <div class="copy-right">
+        <p>&copy; 2021. All rights reserved.</p>
+      </div>
+    </footer>
+  </section>    <!-- akhir Footer -->       
+
+<!-- Bootstrap JS -->
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+</body>
+</html>
