@@ -41,7 +41,7 @@ while ($data_lap = mysqli_fetch_array($query_laptop))
  * Menentukan Vektor S
  */
 foreach ($laptops as $i => $laptop) {
-  $vektor_harga  = pow(get_bobot_harga($laptop['harga_laptop']), $kriterias[0]['wj']);
+  $vektor_harga  = pow(get_bobot_harga($laptop['harga_laptop'], $bobot_harga), $kriterias[0]['wj']);
   $vektor_gaming = pow($_POST['gaming'], $kriterias[1]['wj']);
   $vektor_desain = pow($_POST['desain'], $kriterias[2]['wj']);
   $vektor_coding = pow($_POST['coding'], $kriterias[3]['wj']);

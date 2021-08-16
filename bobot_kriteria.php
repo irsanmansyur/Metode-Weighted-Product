@@ -39,15 +39,29 @@ $bobot_harga_val = [
   5 =>   "15000000 AND 79999999",
 ];
 
-function get_bobot_harga($harga)
+
+$bobot_harga = array_filter($bobot_kriteria, function ($b_harga) {
+  return ($b_harga['bobot_harga']);
+});
+function get_bobot_harga($harga, $bobot_harga = [])
 {
-  if ($harga < 4000000)
-    return 1;
-  elseif ($harga >= 6500000 && $harga <= 7500000)
-    return 2;
-  elseif ($harga >= 8500000 && $harga <= 10000000)
-    return 3;
-  elseif ($harga >= 12000000 && $harga <= 14000000)
-    return 4;
-  else return 5;
+  foreach ($bobot_harga as $harga_bt) {
+    $filter_hrg = str_replace([".", " "], "", $harga_bt['bobot_harga']);
+    if (strpos($filter_hrg, "<") !== false && strpos($filter_hrg, ">") === false) {
+      if ($harga < (int) str_replace(['<'], "",  $filter_hrg))
+        return $harga_bt['bobot'];
+      $filter_hrg = str_replace(["<"], "", $filter_hrg);
+    }
+    $hrg_arr = explode("-", $filter_hrg);
+    if (count($hrg_arr) > 1) {
+      if ($harga >= $hrg_arr[0] && $harga <= $hrg_arr[1]) {
+        return $harga_bt['bobot'];
+      }
+    }
+
+    if (strpos($filter_hrg, ">") !== false and strpos($filter_hrg, "<") === false)
+      if ($harga > (int) str_replace(['>', " ", "."], "",  $filter_hrg))
+        return $harga_bt['bobot'];
+  }
+  return 5;
 }
