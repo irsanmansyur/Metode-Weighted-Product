@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 16, 2021 at 05:23 PM
+-- Generation Time: Aug 16, 2021 at 07:16 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.3.25
 
@@ -53,15 +53,45 @@ INSERT INTO `admin` (`no_admin`, `nama`, `email`, `password`, `no_hp`, `foto`) V
 CREATE TABLE `bobot_kriteria` (
   `id` int(11) NOT NULL,
   `bobot` int(11) NOT NULL,
-  `name` varchar(44) NOT NULL,
-  `value` varchar(333) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `bobot_harga` varchar(50) NOT NULL,
+  `bobot_gaming` varchar(50) NOT NULL,
+  `bobot_desain` varchar(50) NOT NULL,
+  `bobot_coding` varchar(50) NOT NULL,
+  `bobot_office` varchar(50) NOT NULL,
+  `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `no_admin` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `bobot_kriteria`
 --
 
-INSERT INTO `bobot_kriteria` (`id`, `bobot`, `name`, `value`) VALUES
+INSERT INTO `bobot_kriteria` (`id`, `bobot`, `bobot_harga`, `bobot_gaming`, `bobot_desain`, `bobot_coding`, `bobot_office`, `create_date`, `update_date`, `no_admin`) VALUES
+(1, 1, '< 4.000.000', 'Game 3D', 'Desain 2D', 'Coding Anak - anak', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(2, 2, '6.500.000 – 7.500.000', 'Game Dewasa', 'Desain 3D', 'Coding Game', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(3, 3, '8.500.000 – 10.000.000', 'Game anak – anak', 'Desain Autocad', 'Coding Desktop', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(4, 4, '12.000.000 – 14.000.000', 'Game bawaan Laptop', 'Desain UI/UX', 'Coding Android', 'Pekerjaan Kantor', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(5, 5, '>15.000.000', 'Game Kompetisi', 'Desain Grafis', 'Coding Website', 'Pengerjaan Tugas sekolah / kuliah', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bobot_kriteriaa`
+--
+
+CREATE TABLE `bobot_kriteriaa` (
+  `id` int(11) NOT NULL,
+  `bobot` int(11) NOT NULL,
+  `name` varchar(44) NOT NULL,
+  `value` varchar(333) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bobot_kriteriaa`
+--
+
+INSERT INTO `bobot_kriteriaa` (`id`, `bobot`, `name`, `value`) VALUES
 (1, 1, 'bobot_game', 'Game 3D'),
 (2, 2, 'bobot_game', 'Game Dewasa'),
 (3, 3, 'bobot_game', 'Game anak – anak'),
@@ -78,7 +108,12 @@ INSERT INTO `bobot_kriteria` (`id`, `bobot`, `name`, `value`) VALUES
 (14, 4, 'bobot_coding', 'Coding Android'),
 (15, 5, 'bobot_coding', 'Coding Website'),
 (16, 4, 'bobot_office', 'Pekerjaan Kantor'),
-(17, 5, 'bobot_office', 'Pengerjaan Tugas sekolah / kuliah');
+(17, 5, 'bobot_office', 'Pengerjaan Tugas sekolah / kuliah'),
+(18, 1, 'bobot_harga', '< 4.000.000'),
+(19, 2, 'bobot_harga', '6.500.000 – 7.500.000'),
+(20, 3, 'bobot_harga', '8.500.000 – 10.000.000'),
+(21, 4, 'bobot_harga', '12.000.000 – 14.000.000'),
+(22, 5, 'bobot_harga', '> 15.000.000');
 
 -- --------------------------------------------------------
 
@@ -164,7 +199,9 @@ CREATE TABLE `laptop` (
 
 INSERT INTO `laptop` (`no_laptop`, `merk_laptop`, `harga_laptop`, `gaming_laptop`, `desain_laptop`, `coding_laptop`, `office_laptop`, `foto_laptop`, `link_laptop`, `deskripsi_laptop`, `create_date`, `update_date`, `status_laptop`, `no_admin`) VALUES
 (1, 'Asus ROG G513QC-R535B6T-O Strix-G', 15499000, 'Game Kompetisi', 'Desain Grafis', 'Coding Web', 'Pengerjaan Tugas Sekolah/Kuliah', '329-asus_asus_rog_g513qc-r535b6t-o_strix-g_gaming_laptop_-r5-5600h-rtx_3050_4gb-512gb_ssd-8gb_ram-win10-ohs_2019-slim_fhd_ips_144hz-_-_free_backpack_--_full02_miy6zfnp.jpg', 'https://www.blibli.com/p/asus-rog-g513qc-r535b6t-o-strix-g-gaming-laptop-r5-5600h-rtx-3050-4gb-512gb-ssd-8gb-ram-win10-ohs-2019-slim-fhd-ips-144hz-free-backpack/ps--BLG-60035-01867?ds=BLG-60035-01867-00001&source=SEARCH&sid=e5baf0410b11d44f&cnc=false&pickupPointCode=PP-3055768&pid=BLG-60035-01867&tag=trending', '<p>Spesifikasi : &bull; &quot;Processor: AMD Ryzen 5 5600H Processor &bull;Memory: 8 GB DDR4 3200MHz &bull;Storage: 512GB M.2 NVMe&trade; PCIe&reg; SSD &bull;Graphic: NVIDIA GeForce RTX 3050 4GB GDDR6 &bull;Operating System: Windows 10 Home + OHS 2019 Preinstalled&quot;</p>\r\n', '2021-08-07 23:59:12', '2021-08-07 23:59:12', 'Laptop Tersedia', 1),
-(2, 'HP 3410', 10000000, 'Game 3D', 'Desain UI/UX', 'Coding Android', 'Pekerjaan Kantor', '242-', 'link1', '<p>Keterangan : Laptop yang sangat dibutuhkan oleh pengguna</p>\r\n', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Laptop Tersedia', 1);
+(2, 'HP 3410', 10000000, 'Game 3D', 'Desain UI/UX', 'Coding Android', 'Pekerjaan Kantor', '242-', 'link1', '<p>Keterangan : Laptop yang sangat dibutuhkan oleh pengguna</p>\r\n', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Laptop Tersedia', 1),
+(6, 'HP 6410', 11500000, 'Game 3D', 'Desain UI/UX', 'Coding Android', 'Pekerjaan Kantor', '242-', 'link1', '<p>Keterangan : Laptop yang sangat dibutuhkan oleh pengguna</p>\r\n', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 'Laptop Tersedia', 1),
+(7, 'HP 6410', 9500000, 'Game 3D', 'Desain UI/UX', 'Coding Android', 'Pekerjaan Kantor', '242-', 'link1', '<p>Keterangan : Laptop yang sangat dibutuhkan oleh pengguna</p>\r\n', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 'Laptop Tersedia', 1);
 
 -- --------------------------------------------------------
 
@@ -228,6 +265,12 @@ ALTER TABLE `bobot_kriteria`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `bobot_kriteriaa`
+--
+ALTER TABLE `bobot_kriteriaa`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `bobot_produk`
 --
 ALTER TABLE `bobot_produk`
@@ -278,7 +321,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bobot_kriteria`
 --
 ALTER TABLE `bobot_kriteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `bobot_kriteriaa`
+--
+ALTER TABLE `bobot_kriteriaa`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `bobot_produk`
@@ -290,13 +339,13 @@ ALTER TABLE `bobot_produk`
 -- AUTO_INCREMENT for table `kriteria`
 --
 ALTER TABLE `kriteria`
-  MODIFY `no_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `no_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `laptop`
 --
 ALTER TABLE `laptop`
-  MODIFY `no_laptop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `no_laptop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `riwayat`

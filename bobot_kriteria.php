@@ -1,29 +1,25 @@
 <?php
-$bobot_game = [
-  1 =>  "Game 3D",
-  2 =>  "Game Dewasa",
-  3 =>  "Game anak – anak",
-  4 =>  "Game bawaan Laptop",
-  5 =>  "Game Kompetisi"
-];
-$bobot_desain = [
-  1 =>  "Desain 2D",
-  2 =>  "Desain 3D",
-  3 =>  "Desain Autocad",
-  4 =>  "Desain UI/UX",
-  5 =>  "Desain Grafis"
-];
-$bobot_coding = [
-  1  => "Coding Anak - anak",
-  2  => "Coding Game",
-  3  => "Coding Desktop",
-  4  => "Coding Android",
-  5  => "Coding Website"
-];
-$bobot_office = [
-  4 =>   "Pekerjaan Kantor",
-  5 =>   "Pengerjaan Tugas sekolah / kuliah"
-];
+include 'koneksi.php';
+$query_all_bobot = mysqli_query($koneksi, "SELECT * FROM bobot_kriteria");
+$bobot_kriteria = array();
+while ($data = mysqli_fetch_array($query_all_bobot))
+  $bobot_kriteria[] = $data;
+
+
+$bobot_game = array_filter($bobot_kriteria, function ($b_kriteria) {
+  return ($b_kriteria['bobot_gaming']);
+});
+
+$bobot_desain = array_filter($bobot_kriteria, function ($b_kriteria) {
+  return ($b_kriteria['bobot_desain']);
+});
+$bobot_coding = array_filter($bobot_kriteria, function ($b_kriteria) {
+  return ($b_kriteria['bobot_coding']);
+});
+$bobot_office = array_filter($bobot_kriteria, function ($b_kriteria) {
+  return ($b_kriteria['bobot_office']);
+});
+
 
 
 

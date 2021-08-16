@@ -1,5 +1,4 @@
 <?php
-include 'koneksi.php';
 include 'bobot_kriteria.php';
 ?>
 
@@ -98,8 +97,8 @@ include 'bobot_kriteria.php';
         <div class="col-md-6">
           <select class="form-select" name="gaming" required>
             <option disabled>Pilih Gaming</option>
-            <?php foreach ($bobot_game as $bobot => $val) : ?>
-              <option value="<?= $bobot; ?>"><?= $val; ?></option>
+            <?php foreach ($bobot_game as $i => $game) : ?>
+              <option value="<?= $game['bobot']; ?>"><?= $game['bobot_gaming']; ?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -110,8 +109,8 @@ include 'bobot_kriteria.php';
         <div class="col-md-6">
           <select class="form-select" name="desain" required>
             <option disabled>Pilih Desain</option>
-            <?php foreach ($bobot_desain as $bobot => $val) : ?>
-              <option value="<?= $bobot; ?>"><?= $val; ?></option>
+            <?php foreach ($bobot_desain as $desain) : ?>
+              <option value="<?= $desain['bobot']; ?>"><?= $desain['bobot_desain']; ?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -122,8 +121,8 @@ include 'bobot_kriteria.php';
         <div class="col-md-6">
           <select class="form-select" name="coding" required>
             <option disabled>Pilih Coding</option>
-            <?php foreach ($bobot_coding as $bobot => $val) : ?>
-              <option value="<?= $bobot; ?>"><?= $val; ?></option>
+            <?php foreach ($bobot_coding as $coding) : ?>
+              <option value="<?= $coding['bobot']; ?>"><?= $coding['bobot_coding']; ?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -134,8 +133,8 @@ include 'bobot_kriteria.php';
         <div class="col-md-6">
           <select class="form-select" name="office" required>
             <option disabled>Pilih Office</option>
-            <?php foreach ($bobot_office as $bobot => $val) : ?>
-              <option value="<?= $bobot; ?>"><?= $val; ?></option>
+            <?php foreach ($bobot_office as $office) : ?>
+              <option value="<?= $office['bobot']; ?>"><?= $office['bobot_office']; ?></option>
             <?php endforeach; ?>
           </select>
         </div>
