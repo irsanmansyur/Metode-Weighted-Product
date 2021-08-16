@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 16, 2021 at 07:16 PM
+-- Generation Time: Aug 16, 2021 at 08:41 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.3.25
 
@@ -52,7 +52,7 @@ INSERT INTO `admin` (`no_admin`, `nama`, `email`, `password`, `no_hp`, `foto`) V
 
 CREATE TABLE `bobot_kriteria` (
   `id` int(11) NOT NULL,
-  `bobot` int(11) NOT NULL,
+  `bobot` varchar(11) NOT NULL,
   `bobot_harga` varchar(50) NOT NULL,
   `bobot_gaming` varchar(50) NOT NULL,
   `bobot_desain` varchar(50) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `bobot_kriteria` (
   `bobot_office` varchar(50) NOT NULL,
   `create_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `no_admin` int(11) NOT NULL
+  `no_admin` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -68,11 +68,12 @@ CREATE TABLE `bobot_kriteria` (
 --
 
 INSERT INTO `bobot_kriteria` (`id`, `bobot`, `bobot_harga`, `bobot_gaming`, `bobot_desain`, `bobot_coding`, `bobot_office`, `create_date`, `update_date`, `no_admin`) VALUES
-(1, 1, '< 4.000.000', 'Game 3D', 'Desain 2D', 'Coding Anak - anak', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
-(2, 2, '6.500.000 – 7.500.000', 'Game Dewasa', 'Desain 3D', 'Coding Game', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
-(3, 3, '8.500.000 – 10.000.000', 'Game anak – anak', 'Desain Autocad', 'Coding Desktop', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
-(4, 4, '12.000.000 – 14.000.000', 'Game bawaan Laptop', 'Desain UI/UX', 'Coding Android', 'Pekerjaan Kantor', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
-(5, 5, '>15.000.000', 'Game Kompetisi', 'Desain Grafis', 'Coding Website', 'Pengerjaan Tugas sekolah / kuliah', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0);
+(1, '1', '< 4.000.000', 'Game 3D', 'Desain 2D', 'Coding Anak - anak', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(2, '2', '6.500.000 - 7.500.000', 'Game Dewasa', 'Desain 3D', 'Coding Game', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(3, '3', '8.500.000 - 10.000.000', 'Game anak – anak', 'Desain Autocad', 'Coding Desktop', '', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(4, '4', '12.000.000 - 14.000.000', 'Game bawaan Laptop', 'Desain UI/UX', 'Coding Android', 'Pekerjaan Kantor', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(5, '5', '> 15.000.000', 'Game Kompetisi', 'Desain Grafis', 'Coding Website', 'Pengerjaan Tugas sekolah / kuliah', '2021-08-17 00:00:00', '2021-08-17 00:00:00', 0),
+(7, '3.5', '7.500.001 - 8.499.999', '', '', '', '', '2021-08-17 04:37:24', '2021-08-17 04:37:24', 1);
 
 -- --------------------------------------------------------
 
@@ -321,7 +322,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `bobot_kriteria`
 --
 ALTER TABLE `bobot_kriteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `bobot_kriteriaa`
